@@ -2,9 +2,14 @@ services:
   mysql:
     image: 'mysql:latest'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - MYSQL_DATABASE=erpdb
+      - MYSQL_PASSWORD=7x!3VRzE5#6gYQW&@UAm4
+      - MYSQL_ROOT_PASSWORD=7x!3VRzE5#6gYQW&@UAm4
+      - MYSQL_USER=useradmin
     ports:
-      - '3306'
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
