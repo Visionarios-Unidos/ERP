@@ -12,7 +12,6 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "AppUser")
 public class User {
 
     @Id
