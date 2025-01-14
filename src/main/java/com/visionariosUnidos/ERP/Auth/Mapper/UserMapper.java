@@ -19,7 +19,7 @@ public class UserMapper {
                 new RuntimeException("There is no role named: " + userDto.getRole()));
 
         user.setEmail(userDto.getEmail());
-        user.setRole(role);
+        user.setRoles(role);
         user.setPassword(userDto.getPassword());
 
         return user;

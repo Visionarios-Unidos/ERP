@@ -12,6 +12,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "users")
 public class User {
 
     @Id
@@ -24,8 +25,8 @@ public class User {
     private String password;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role", referencedColumnName = "id") //name es el de esta clase, referenced es el de la clase Role
-    private Role role;
+    @JoinColumn(name = "roles", referencedColumnName = "id") //name es el de esta clase, referenced es el de la clase Role
+    private Role roles;
 
     @ManyToMany(mappedBy = "users") // En MappedBy se especifica nombre del atributo(de la entity Chat) que crea la clase intermedia
     private List<Chat> chats;
