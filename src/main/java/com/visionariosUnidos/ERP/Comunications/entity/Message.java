@@ -1,4 +1,4 @@
-package com.visionariosUnidos.ERP.Comunications.Entity;
+package com.visionariosUnidos.ERP.Comunications.entity;
 
 import com.visionariosUnidos.ERP.Auth.Entity.User;
 import jakarta.persistence.*;
@@ -19,4 +19,9 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
+
+
+    @ManyToOne
+    @JoinColumn(name = "chat_id", referencedColumnName = "id")
+    private Chat chat;
 }

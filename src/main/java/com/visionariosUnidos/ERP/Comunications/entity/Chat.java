@@ -1,7 +1,7 @@
-package com.visionariosUnidos.ERP.Comunications.Entity;
+package com.visionariosUnidos.ERP.Comunications.entity;
 
 import com.visionariosUnidos.ERP.Auth.Entity.User;
-import com.visionariosUnidos.ERP.Comunications.Constants.Visibility;
+import com.visionariosUnidos.ERP.Comunications.constants.Visibility;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,4 +29,7 @@ public class Chat {
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private List<User> users;
+
+    @OneToMany(targetEntity = Message.class, cascade = CascadeType.ALL, mappedBy = "chat")
+    private List<Message> messages;
 }
