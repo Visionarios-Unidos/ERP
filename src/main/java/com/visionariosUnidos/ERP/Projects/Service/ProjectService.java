@@ -14,8 +14,8 @@ public class ProjectService {
 
     private ProjectRepository projectRepository;
 
-    public Optional<List<Project>> getProjects() {
-        return Optional.of(projectRepository.findAll());
+    public List<Project> getProjects() {
+        return projectRepository.findAll();
     }
 
     public Optional<Project> getProjectById(Long id) {

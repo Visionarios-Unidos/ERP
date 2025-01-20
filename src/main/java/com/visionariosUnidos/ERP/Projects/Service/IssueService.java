@@ -14,8 +14,8 @@ public class IssueService {
 
     private IssueRepository issueRepository;
 
-    public Optional<List<Issue>> getIssues() {
-        return Optional.of(issueRepository.findAll());
+    public List<Issue> getIssues() {
+        return issueRepository.findAll();
     }
 
     public Optional<Issue> getIssueById(Long id) {
@@ -26,7 +26,11 @@ public class IssueService {
         return issueRepository.save(issue);
     }
 
-    public void deleteIssue(Long id) {
-        issueRepository.deleteById(id);
+    public boolean deleteIssue(Long id) {
+        if (issueRepository.existsById(id)){
+            issueRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

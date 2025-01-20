@@ -15,7 +15,7 @@ public class Issue {
     private String name;
     private String description;
     private LocalDateTime createdAt;
-    private boolean closed;
+    private Boolean closed;
     @ManyToOne(fetch = FetchType.LAZY)
     private Project project;
 
